@@ -1,0 +1,24 @@
+body{
+    background:#fff;
+
+}
+#master{
+    display:grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+#simarea{
+    align-items: center;
+
+}
+
+#controls{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+}
+.inp{
+    margin:1em;
+}
