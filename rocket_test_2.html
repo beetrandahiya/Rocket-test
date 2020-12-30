@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="rocket_test_2.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
     </head>
@@ -20,19 +20,20 @@
             </div>
             <div id="controls">
                 <div class="col-xs-4">
-                <input type="text" id="Massi" placeholder="Initial Mass" class="inp form-control">
-                <input type="text" id="Massp" placeholder="Payload Mass" class="inp form-control">
-                <input type="text" id="Massf" placeholder="Fuel Mass" class="inp form-control">
-                <input type="text" id="pressureExh" placeholder="Exhaust Pressure" class="inp form-control">
-                <input type="text" id="AreaExh" placeholder="Area of Exhaust Nozzle" class="inp form-control">
-                <input type="text" id="dmdt" placeholder="Rate of loss of fuel" class="inp form-control">
+                <input type="text" id="massi" placeholder="Initial Mass" class="inp form-control" value="3">
+                <input type="text" id="massp" placeholder="Payload Mass" class="inp form-control" value="3">
+                <input type="text" id="massf" placeholder="Fuel Mass" class="inp form-control" value="3">
+                <input type="text" id="pressureexh" placeholder="Exhaust Pressure" class="inp form-control" value="20">
+                <input type="text" id="areaexh" placeholder="Area of Exhaust Nozzle" class="inp form-control" value="1">
+                <input type="text" id="dmdt" placeholder="Rate of loss of fuel" class="inp form-control" value="1">
                 </div>
-                <button id="btn" class="btn btn-default" onClick="project()">Start</button>
+                <button type="button" id="btn" class="btn btn-default" onClick="project()">Start</button>
 
 
                 
 
             </div>
+            
             <div id="charts">
                 <div id="velchart">
 
