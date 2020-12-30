@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <script src="apexcharts.js"></script>
+        <style>
+            body{
+                background-color: #fff;
+            }
+            #chart{
+                width:50%;
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="chart"></div>
+        <script>
+            var ydata=[];
+            //var xdata=[];
+           /* for(i=0;i<=1000;i++){
+                vlx=i/100;
+                //let vl=Math.sin(vlx);
+                xdata.push(vlx);
+                //ydata.push(vl);
+
+
+            };*/
+
+            var options={
+                chart:{
+                    type:'line',
+                    id:'realtime',
+                    height: 400,
+                    animations:{
+                        enabled:true,
+                        easing: 'linear',
+                        dynamicAnimation:{
+                            speed:1
+                        }
+                    }
+                },
+                markers:{
+                    size:0
+                },
+                stroke:{
+                    curve:'straight',
+                },
+                series:[{
+                    data:ydata
+                }],
+                xaxis:{
+                    type:'numeric'
+                }
+
+            }
+
+            var chart = new ApexCharts(document.querySelector('#chart'),options);
+
+            chart.render();
+            vl_x=0;
+
+            setInterval(function(){
+                vlx=vl_x/10;
+                let vl=Math.sin(vlx);
+                yvl_new=[vlx,vl];
+                ydata.push(yvl_new);
+                vl_x++;
+
+                chart.updateSeries([{
+          data: ydata
+        }])
+                
+            },0.1)
+
+        </script>
+    </body>
+</html>
