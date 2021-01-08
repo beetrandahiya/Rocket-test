@@ -6,20 +6,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="rocket_test.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="plotly.js"></script>
-
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 
@@ -30,20 +27,35 @@
             <div id="renderport"></div>
             <div id="startinp">
                 <form class="form" id="formm">
+                    <div id="inpvars">
+                        <input data-toggle="tooltip" data-placement="left"  title="Initial Mass" type="text" id="massi" placeholder="Initial Mass" class="inp form-control" value="3">
+                        <input data-toggle="tooltip" data-placement="left"  title="Payload Mass" type="text" id="massp" placeholder="Payload Mass" class="inp form-control" value="3">
+                        <input data-toggle="tooltip" data-placement="left"  title="Fuel Mass" type="text" id="massf" placeholder="Fuel Mass" class="inp form-control" value="3">
+                        <input data-toggle="tooltip" data-placement="left"  title="Exhaust Pressure" type="text" id="pressureexh" placeholder="Exhaust Pressure" class="inp form-control"
+                            value="2">
+                        <input data-toggle="tooltip"  data-placement="left" title="Area of Exhaust Nozzle" type="text" id="areaexh" placeholder="Area of Exhaust Nozzle" class="inp form-control"
+                            value="1">
+                        <input data-toggle="tooltip" data-placement="left"  title="Rate of loss of fuel" type="text" id="dmdt" placeholder="Rate of loss of fuel" class="inp form-control"
+                            value="1">
+                    </div>
                     <button type="button" id="btn" class="btn btn-default" onClick="project()"><b>Start</b></button>
                 </form>
             </div>
         </div>
-        <!-- <div id="chartplotly"></div>  -->
-        <canvas id="myChart" width="500px" height="120px"></canvas>
-        <canvas id="myChart2" width="500px" height="120px"></canvas>
+        <div id="chartplotlyh"></div>
+        <div id="chartplotlyv"></div>
 
     </div>
 
     <script src="rocket_test.js">
-        
+
 
     </script>
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
 
 
     <footer class="footer" id="ftr">
